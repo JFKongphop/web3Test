@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"
+        type="application/javascript">
+    </script>
+</head>
+<body>
+    <div class="connectBtn">
+        <h2>Account: <span class="showAccount"></span></h2>
+        <button id="connectMeta">Connect</button>
+    </div>
+    
+    <div class="bigAcc">
+        <p id="name"><span class="createYBC"> Create Your Bank Account</span>  </p>
+        <div id="myAccount" class="myAccount">
+            <p class="createAccount">+ Create Account</p>
+
+            <form id="from">
+
+                <div class="form-control">
+                    <label for="username">Account Name</label>
+                    <input type="text" name="" id="username" placeholder="Enter Account Name">
+                    <button id="createBtn" class="createBtn">Create</button>
+                </div>
+
+            </form>
+
+            <div id="aboutAccount" class="aboutAccount">
+                <!-- <div id="nameAccount">kongphop</div> -->
+                <div class="transfer-control">
+
+                    <div class="showAccountName">
+                        Account Name : <span class="nameAcc">kongphop</span>
+                    </div>
+                    <div class="showAccountBalance">
+                        Balance : <span class="balanceAcc"></span>  
+                    </div>
+
+                    <div class="accessContract">
+                        <button id="deposit" class="deposit" ><span class="depo">Deposit</span> <span class="depoBack">Back to console</span> </button>
+                        <button id="withdraw" class="withdraw" > <span class="withda">Withdraw</span> <span class="withBack">Back to console</span> </button>
+                        <button id="transfer" class="transfer" > <span class="tran">Transfer</span> <span class="tranBack">Back to console</span> </button>
+                    </div>
+
+                     <!-- for deposit -->
+                    <div id="depositConsole close" class="depositConsole">
+                        <input type="number" placeholder="Amount" id="depositIn">
+                        <button class="depositToCon" id="depositToCon">Deposit</button>
+                    </div>
+
+                    <div id="withdrawConsole" class="withdrawConsole">
+                        <input type="number" placeholder="Amount" id="withdrawOut">
+                        <button class="withdrawBack" id="withdrawBack">Withdraw</button>
+                    </div>
+     
+                    <div id="transferConsole" class="transferConsole">
+                        <input type="text" placeholder="Address" id="addressTo">
+                        <button class="submitAdd" id="submitAdd">Submit Address</button>
+                        <br>
+                        <input type="number" placeholder="Amount" id="transferOut">  
+                        <button class="transferTo" id="transferTo">Transfer</button>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
+

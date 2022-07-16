@@ -1,0 +1,183 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background-color: bisque;
+}
+
+.connectBtn{
+    display: flex;
+    justify-content: space-between;
+    background-color: aqua;
+    height: 70px;
+    align-items: center;
+    padding: 10px;
+}
+
+#connectMeta{
+    border: solid red;
+    padding: 10px 30px 10px 30px;
+}
+
+#name{
+    border: solid red;
+    max-width: 50%;
+    padding: 20px;
+}
+
+.myAccount{
+    margin-top: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    height: 300px;
+    border-style: dashed;
+    padding: 30px;
+    background-color: rgb(224, 215, 202);
+}
+
+.createAccount{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    cursor: pointer;
+}
+
+.createAccount.next{
+    display: none;
+}
+
+.btn{
+    padding: 50px;
+}
+
+#name{
+    position: fixed;
+    top: 200px;
+    left: 500px;
+}
+
+form{
+    display: none;
+}
+
+.form-control{
+    position: relative;
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-control label{
+    color: rgb(0, 0, 0);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-control input{
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.createBtn{
+    border: solid black;
+    padding: 10px 30px 10px 30px;
+    cursor: pointer;
+}
+
+.createBtn:hover{
+    transform: scale(0.98);
+    background-color: rgba(127, 255, 212, 0.557);
+}
+
+.aboutAccount{
+    opacity: 0;
+}
+
+#nameAccount{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.transfer-control{
+    margin-bottom: 60px;
+    display: inline;
+    justify-content: space-between;
+}
+
+.showAccountName{
+    display: flex;
+    justify-content: space-between;
+}
+
+.accessContract{
+    margin-top: 20px;
+    display: flex;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.deposit, .withdraw, .transfer {
+    border: solid black;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+}
+
+.deposit:hover, .withdraw:hover, .transfer:hover {
+    transform: scale(0.98);
+    background-color: rgba(127, 255, 212, 0.557);
+    cursor: pointer;
+}
+
+.withdraw.hide, .transfer.hide, .deposit.hide{
+    display: none;
+}
+
+.depositConsole, .transferConsole, .withdrawConsole{
+    flex-direction: column;
+    display: none;
+}
+
+.depositConsole.show, .transferConsole.show, .withdrawConsole.show{
+    display: flex;
+}
+
+/* first show */
+.depo, .withda, .tran{
+    display: flex;
+}
+
+.depo.hide, .withda.hide, .tran.hide{
+    display: none;
+}
+
+.depoBack, .withBack, .tranBack{
+    display: none;
+}
+
+.depoBack.show, .withBack.show, .tranBack.show{
+    display: flex;
+}
+
+.createYBC{
+    display: flex;
+}
+
+.createYBC.hide{
+    display: none;
+}
