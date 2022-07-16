@@ -122,18 +122,6 @@ async function getAccount() {
     ethereumButton.innerHTML = lessAccount;
 }
 
-// function reAccNet(){
-//     // show switch account page is reload
-//     window.ethereum.on('accountsChanged', (accounts) => {
-//         window.location.reload();
-//     });
-
-//     // show when switch network page is reload
-//     window.ethereum.on('chainChanged', (chainId) => {
-//         window.location.reload();
-//     });
-// }
-
 createAccount.addEventListener('click',()=>{
     createAccount.classList.add('next');
     myAccount.innerHTML = "My Account"
@@ -210,10 +198,6 @@ getData = () =>{
     console.log(data);
 }
 
-// let currentBalance = +(getData());
-// console.log("cuurent is : "+currentBalance);
-
-
 depositToCon.addEventListener('click', async (e)=>{
     e.preventDefault()
     depositAmount = depositIn.value;
@@ -284,7 +268,7 @@ transferTo.addEventListener('click', (e)=>{
 async function transferToOther(amount, receiver){
     const ABI = ["function sendToReceive(address _to, uint _amount)"];
     const iface = new ethers.utils.Interface(ABI);
-    const encodeData = iface.encodeFunctionData("sendToReceive", [receiver], [ethers.utils.parseEther(amount)]);
+    const encodeData = iface.encodeFunctionData("sendToReceive", [receiver, ethers.utils.parseEther(amount)]);
 
     const tx = await signer.sendTransaction({
         to: lastAll,
