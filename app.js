@@ -161,8 +161,6 @@ depositBtn.addEventListener('click',()=>{
     // hide and show console when click 
     depositConsole.classList.toggle('show')
     myAccount.innerHTML = "Deposit"
-
-    
 })
 
 withdrawBtn.addEventListener('click', ()=>{
@@ -198,15 +196,22 @@ getData = () =>{
     console.log(data);
 }
 
+// get value to deposit
 depositToCon.addEventListener('click', async (e)=>{
     e.preventDefault()
-    depositAmount = depositIn.value;
-    console.log(depositAmount);
+    if(depositIn.value > 0  && depositIn.value){
+        depositAmount = depositIn.value;
+        console.log(depositAmount);
+    
+        localStorage.setItem("Balance", depositAmount)
+    
+        deposit(depositAmount)
+        depositIn.value = ""; 
+    }
+    else{
+        alert("Please enter amount")
+    }
 
-    localStorage.setItem("Balance", depositAmount)
-
-    deposit(depositAmount)
-    depositIn.value = ""; 
 })
 
 async function deposit(amount){
@@ -224,15 +229,20 @@ async function deposit(amount){
 // get value to withdraw
 withdrawBack.addEventListener('click', (e)=>{
     e.preventDefault()
-    // check again when withdraw more deposit
-    withdrawAmount = withdrawOut.value;
-    console.log(withdrawAmount);
-    if(depositAmount >= withdrawAmount){
-        withdrawVa(withdrawAmount)
-        withdrawAmount.value = ""; 
+    // check again when withdraw more deposit and more than 0
+    if(withdrawOut.value > 0 && withdrawOut.value){
+        withdrawAmount = withdrawOut.value;
+        console.log(withdrawAmount);
+        if(depositAmount >= withdrawAmount){
+            withdrawVa(withdrawAmount)
+            withdrawAmount.value = ""; 
+        }
+        else{
+            console.log("Balance not enough");
+        }
     }
     else{
-        console.log("Balance not enough");
+        alert("Please enter amount")
     }
 })
 
@@ -254,15 +264,27 @@ async function withdrawVa(amount){
 // submit address
 submitAdd.addEventListener('click', (e)=>{
     e.preventDefault()
-    AddressSend = addressTo.value;
-    console.log(AddressSend);
+    if(addressTo.value){
+        AddressSend = addressTo.value;
+        console.log(AddressSend);
+    }
+    else{
+        alert("Please enter address")
+    }
+  
 })
 // get value transfer
+// submit address to transfer
 transferTo.addEventListener('click', (e)=>{
     e.preventDefault()
-    transferAmount = transferOut.value;
-    console.log(transferAmount);
-    transferToOther(transferAmount, AddressSend)
+    if(transferOut.value > 0){
+        transferAmount = transferOut.value;
+        console.log(transferAmount);
+        transferToOther(transferAmount, AddressSend)
+    }
+    else{
+        alert("Please enter amount")
+    }
 })
 
 async function transferToOther(amount, receiver){
